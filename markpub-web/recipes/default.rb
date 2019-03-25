@@ -43,10 +43,6 @@ end
 execute "add-group" do
  command "usermod -a -G sudo bruno"
 end
- 
-
-#node["markpub-web_final"]["sites"].each do |sitename, data|
-#end
 
 #Alterando a porta do SSH
 
@@ -57,11 +53,6 @@ template '/etc/ssh/sshd_config' do
   variables( :port => node['openssh']['server']['port'] )
   notifies :restart, 'service[sshd]'
 end
-
-#execute "change-port-ssh" do
-#command "sed -i 's/Port 22/Port 3350/g' /etc/ssh/sshd_config"
-#end
-
 
 #Virtual Hosts Files
 
