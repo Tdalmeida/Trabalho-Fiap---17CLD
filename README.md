@@ -20,7 +20,7 @@ link do github: https://github.com/Tdalmeida/Trabalho-Fiap---17CLD
     $ knife node run_list add <nome do node> 'recipe[markpub-web::default]'
 
   #### Acessse o Chef Client
-    $ ssh usuário do chef client @ ip do chef client
+    $ ssh <usuário do chef client>@<ip do chef client>
   #### Execute o chefclient para aplicar o Cookbook
     $ sudo chef-client
 
