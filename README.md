@@ -29,7 +29,7 @@ usuário: bruno
 
 senha: Zaq12wsX
 
-port: 3055
+port: 3350
 
 ## Endereços dos servidores
 markpub.dev.com.br
