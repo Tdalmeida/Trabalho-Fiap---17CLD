@@ -13,6 +13,12 @@ service 'apache2' do
   supports :reload => true
 end
 
+# Start e Enable do servico SSH Server
+service 'sshd' do
+  action [:enable,:start]
+  supports :reload => true
+end
+
 #Criando o usuário
 
 user "bruno" do
@@ -39,14 +45,22 @@ execute "add-group" do
 end
  
 
-node["markpub-web_final"]["sites"].each do |sitename, data|
-end
+#node["markpub-web_final"]["sites"].each do |sitename, data|
+#end
 
 #Alterando a porta do SSH
 
-execute "change-port-ssh" do
-command "sed -i 's/Port 22/Port 3350/g' /etc/ssh/sshd_config"
+template '/etc/ssh/sshd_config' do
+  source 'sshd_config.erb'
+  owner 'root'
+  mode '0644'
+  variables( :port => node['openssh']['server']['port'] )
+  notifies :restart, 'service[sshd]'
 end
+
+#execute "change-port-ssh" do
+#command "sed -i 's/Port 22/Port 3350/g' /etc/ssh/sshd_config"
+#end
 
 
 #Virtual Hosts Files
@@ -82,9 +96,9 @@ cookbook_file "/var/www/html/#{sitename}/index.html" do
     mode "0755"
   end
 
-execute "restart-ssh" do
-command "service sshd restart"
-end
+#execute "restart-ssh" do
+#command "service sshd restart"
+#end
 
 end
 
