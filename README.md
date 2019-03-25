@@ -3,7 +3,7 @@
 link do github: https://github.com/Tdalmeida/Trabalho-Fiap---17CLD
 
 ## Copiando o Cookbook para o ChefServer
- #### Acesse o diretório de cookbooks
+ #### Acesse o diretório dos cookbooks
   cd ~/chef-repo/cookbooks
  #### Execute o Git Clone 
     $ git clone https://github.com/Tdalmeida/Trabalho-Fiap---17CLD 
