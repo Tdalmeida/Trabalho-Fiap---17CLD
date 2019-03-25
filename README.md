@@ -42,11 +42,11 @@ markpub.prod.com.br
 
 Caso o computador seja windows, inclua as linhas em C:/Windows/system32/drivers/etc/hosts
 
-Caso o computador seja Linux inclua as linhas em /etc/hosts
+###Caso o computador seja Linux inclua as linhas em /etc/hosts
 
-ip do servidor client  markpub.dev.com.br 
-ip do servidor client  markpub.hom.com.br 
-ip do servidor client  markpub.prod.com.br 
+####ip do servidor client  markpub.dev.com.br 
+####ip do servidor client  markpub.hom.com.br 
+####ip do servidor client  markpub.prod.com.br 
 
 ##OBS: A "empresa Markpub" foi criada em um dos primeiros trabalhos do grupo e foi mantido nos demais trabalhos.
 
