@@ -48,5 +48,5 @@ Caso o computador seja Linux inclua as linhas em /etc/hosts
 #### ip do servidor client  markpub.hom.com.br 
 #### ip do servidor client  markpub.prod.com.br 
 
-### OBS: A "empresa Markpub" foi criada em um dos primeiros trabalhos do grupo e foi mantido nos demais trabalhos.
+### OBS: A "empresa Markpub" foi criada em um dos primeiros trabalhos do grupo e o nome foi mantido nos demais trabalhos.
 
