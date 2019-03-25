@@ -15,7 +15,7 @@ link do github: https://github.com/Tdalmeida/Trabalho-Fiap---17CLD
     $ knife ssl fetch
     $ knife cookbook upload markpub-web
 
-### Adicionando cookbooks ao runlist do mode
+#### Adicionando cookbooks ao runlist do mode
 
     $ knife node run_list add <nome do node> 'recipe[markpub-web::default]'
 
