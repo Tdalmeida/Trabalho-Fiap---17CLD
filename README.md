@@ -1,34 +1,27 @@
 #Trabalho Devops - Fiap 17CLD - CHEF
 
-link do github: https://github.com/
+link do github: https://github.com/Tdalmeida/Trabalho-Fiap---17CLD
 
-## Acesse o servidor chef client
-
-
-    $ ssh user@ipdoseuservidor
-
-
-## Copiando o Cookbook no ChefServer
-
-    $ git clone https://github.com/tdalmeida/markpub.git 
-
-    $ cd ~/chef-repo
-    $ knife configure -k ~/.chef/suachave.pem -u seuusuario --validation-client-name nome_do_client --validation-key ~/.chef/suachave.pem -s "https://ip_do_seu_server/organizations/markpub" -r ~/chef-repo
-    $ echo 'cookbook_path ["~/chef-repo/cookbooks"]' >> ~/.chef/knife.rb
+## Copiando o Cookbook para o ChefServer
+ #### Acesse o diretório de cookbooks
+  cd ~/chef-repo/cookbooks
+ #### Execute o Git Clone 
+    $ git clone https://github.com/Tdalmeida/Trabalho-Fiap---17CLD 
+ #### Acesse a pasta criada pelo Git
+    $ cd Trabalho-Fiap---17CLD
+ #### Copie o diretório markpub-web
+    $ cp -r markpub-web ../../cookbooks
+ #### Execute os comandos abaixo para que o Cookbook fique disponível no ChefServer   
     $ knife ssl fetch
-    $ knife upload cookbooks/markpub-web
+    $ knife cookbook upload markpub-web
 
-### Executando knife bootstrap no Chef-Client
+### Adicionando cookbooks ao runlist do mode
 
-    $ knife bootstrap ipdoclient:22 -x root -P senhadoroot -N markpub-web --sudo
+    $ knife node run_list add <nome do node> 'recipe[markpub-web::default]'
 
-### Adicionando cookbooks ao runlist do host
-
-    $ knife node run_list add markpub-web 'recipe[markpub-web::default]'
-
-### Executando o chefclient para aplicar o Cookbook
-
+  #### Acessse o Chef Client
     $ ssh usuário do chef client @ ip do chef client
+  #### Execute o chefclient para aplicar o Cookbook
     $ sudo chef-client
 
 ## Informações para o acesso do CTO
@@ -55,5 +48,5 @@ ip do servidor client  markpub.dev.com.br
 ip do servidor client  markpub.hom.com.br 
 ip do servidor client  markpub.prod.com.br 
 
-OBS: A "empresa Markpub" foi criada em um dos primeiros trabalhos do grupo e foi mantido nos demais trabalhos.
+##OBS: A "empresa Markpub" foi criada em um dos primeiros trabalhos do grupo e foi mantido nos demais trabalhos.
 
